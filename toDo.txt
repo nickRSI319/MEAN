@@ -8,4 +8,6 @@
 	-configure it for this project,
 	-write documentation of how to configure and how to use
 
+-select and build out a tracking tool (JIRA, Trello, Github)
+-setup shared knowledge space (Confluence, wiki, Github)
 

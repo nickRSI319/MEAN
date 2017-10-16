@@ -1,4 +1,5 @@
 =Setup your environment=
+-Github
 
 -Docker Toolkit. This package comes with kinematic (a tool to create instances of docker repos), a custom VirtualBox install for hosting docker instances, and a docker terminal. Docker terminal comes with a bash terminal which also has npm. You will need npm. NOTE:WARNING - You cannot use normal VirtualBox installations or images on the same machine as Docker Toolkit. This will automatically uninstall any other VirtualBox you may have.
 
