@@ -1,0 +1,11 @@
+-complete part 2 of creating a simple mean app
+-use Angular
+	-follow https://angularjs.org/ and develop a NEW Angular front end
+	-deprecate templating engine EJS (DONT DELETE)
+	-write command line script to use deprecated EJS	
+
+-use nodemon
+	-configure it for this project,
+	-write documentation of how to configure and how to use
+
+

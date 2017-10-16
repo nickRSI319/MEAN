@@ -1,0 +1,78 @@
+=Setup your environment=
+
+-Docker Toolkit. This package comes with kinematic (a tool to create instances of docker repos), a custom VirtualBox install for hosting docker instances, and a docker terminal. Docker terminal comes with a bash terminal which also has npm. You will need npm. NOTE:WARNING - You cannot use normal VirtualBox installations or images on the same machine as Docker Toolkit. This will automatically uninstall any other VirtualBox you may have.
+
+-Node
+
+some text editor/dev environment
+	I started with just Notepadd++ for this project
+	Visual Studio Code or Community are also freely available
+
+
+=Start Developing=
+
+Open Docker Terminal
+
+==========run docker image==========
+run docker image:
+docker run -p <extPort>:<intPort> <image name>
+
+run a docker image with a port mapping:
+docker run -p <extPort>:<intPort> <image name>
+
+after starting an image you may need to run to update for new IP addresses:
+docker-machine env
+
+========docker compose============
+create a docker compose file if you need to coordinate multiple dockerfiles. call it docker-compose.yml. the compose file allows you to run several docker instances with one command. 
+
+Compose is Great for testing and deployments. It may also be used during development, but you cannot run the docker image you are developing.
+
+once youve created a docker compose YAML in the directory of your compose file run:
+docker-compose up 
+
+and this will execute the local docker-compose.yml
+
+
+=====MONGODB=====
+we're going to let Docker handle the 'details' of our mongo instance. we're just going to grab the latest mongo image and map its exposed port
+
+=====Node Express=====
+A very simple read/write form has been wired up to a mongo database.
+
+
+
+
+
+=====What has been done so far======
+==built a new project from scratch==
+
+open the Docker Quickstart (bash) terminal
+create app structure with terminal or windows explorer
+to init the app structure run:
+npm init
+
+use npm to install dependencies:
+npm install
+
+======DOCKER=====
+create a dockerfile the contains the following or something similar
+	FROM node:8
+		//use an existing base repo for consistency
+	WORKDIR /app
+		//specifiy the location of you app in the docker container
+	COPY package.json /app
+		//copy node package there
+	RUN npm install
+		//install dependecies
+	COPY . /app
+		//copy your app there
+	CMD node index.js
+		//tell docker what command to run when executing this docker repo
+	EXPOSE 8082
+		//tell docker what port to use to interact
+
+========create a docker image============		
+create a docker image:
+docker build -t <specify a docker image label> <path to the docker file>
+

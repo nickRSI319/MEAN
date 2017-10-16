@@ -1,0 +1,10 @@
+== MEAN ==
+https://zellwk.com/blog/crud-express-mongodb/
+
+== Mongo ==
+Quick Start: http://mongodb.github.io/node-mongodb-native/2.2/quick-start/quick-start/
+
+== Docker ==
+Compose: https://docs.docker.com/get-started/part3/#your-first-docker-composeyml-file
+
+

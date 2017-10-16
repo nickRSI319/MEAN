@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  mongo-db:
+    build: ./Mongo
+    ports:
+      - "9001:27017"
+  expressjs-service:
+    build: ./Node-Express
+    ports: 
+      - "8091:8081"
