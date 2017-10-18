@@ -10,9 +10,55 @@ some text editor/dev environment
 	Visual Studio Code or Community are also freely available
 
 
-=Start Developing=
+- a Github account
+- a Docker Swarm account
 
+clone https://github.com/nickRSI319/MEAN.git
 Open Docker Terminal
+login to docker on your machine:
+	docker login
+	**if a docker command ever errors out saying "unauthorized", rerun "docker login"
+navigate to the directory where you cloned the repo:
+	cd X:\path\to\your\copy
+install node & express by navigating into the Node-Express file:
+	cd ./Node-Express
+then install the dependecies:
+	npm install
+navigate back to the root project folder:
+	cd ..
+run docker compose:
+	docker-compose up
+lots of things will start running across the terminal
+and if all goes well you'll read "waiting for connections on port XYZ"
+
+if all does not go well take a screen shot of the error, google it, keep a record of the results you visit, the solution, and include this in
+the documentation.
+
+You're all setup, hmMmm!
+
+type Ctrl+C once to nicely stop the docker-compose script
+type Ctrl+C twice to force stop it
+
+====Start Developing Node/Express====
+after setting up your environment and stopping the compose script 
+navigate to the MEAN/Node-Express folder and you're now in the Node-Express development environment
+
+so far A very simple read/write form has been wired up to a mongo database.
+
+
+====Start Developing Mongo=====
+not yet, for now all of the Mongo work is handled with Docker and Node.
+there will be more mongo specific work done later to setup persistent users, permissions, and other admin tasks
+within Mongo itself, but for now we'll do that programmatically with Node
+for now we're going to let Docker handle the 'details' of our mongo instance. 
+we're just going to grab the latest mongo image and map its exposed port
+
+
+=====Start Developing Angular====
+this facet still needs to be installed and configured! currently the app is using EJS as a template engine
+
+
+
 
 ==========run docker image==========
 run docker image:
@@ -33,16 +79,6 @@ once youve created a docker compose YAML in the directory of your compose file r
 docker-compose up 
 
 and this will execute the local docker-compose.yml
-
-
-=====MONGODB=====
-we're going to let Docker handle the 'details' of our mongo instance. we're just going to grab the latest mongo image and map its exposed port
-
-=====Node Express=====
-A very simple read/write form has been wired up to a mongo database.
-
-
-
 
 
 =====What has been done so far======

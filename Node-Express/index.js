@@ -36,8 +36,6 @@ app.get('/', function (req, res) {
 		res.render('index.ejs', {quotes : results})
 		console.log(results);
 	});
-	
-	
 
 	
 })

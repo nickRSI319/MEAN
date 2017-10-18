@@ -8,4 +8,4 @@ services:
   expressjs-service:
     build: ./Node-Express
     ports: 
-      - "8091:8081"
+      - "8082:8081"
