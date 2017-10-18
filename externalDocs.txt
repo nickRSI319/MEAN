@@ -11,3 +11,8 @@ Compose: https://docs.docker.com/get-started/part3/#your-first-docker-composeyml
 == Github ==
 https://guides.github.com/
 http://kbroman.org/github_tutorial/
+
+== AngularJS (1.0) ==
+http://angularjs.org
+
+
