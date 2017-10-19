@@ -31,6 +31,8 @@ run docker compose:
 lots of things will start running across the terminal
 and if all goes well you'll read "waiting for connections on port XYZ"
 
+visit localhost:8081 in your favorite browser and you should see a little webpage!
+
 if all does not go well take a screen shot of the error, google it, keep a record of the results you visit, the solution, and include this in
 the documentation.
 
@@ -39,11 +41,32 @@ You're all setup, hmMmm!
 type Ctrl+C once to nicely stop the docker-compose script
 type Ctrl+C twice to force stop it
 
-====Start Developing Node/Express====
-after setting up your environment and stopping the compose script 
-navigate to the MEAN/Node-Express folder and you're now in the Node-Express development environment
 
-so far A very simple read/write form has been wired up to a mongo database.
+====Start Developing Node/Express/Anguar====
+after setting up your environment and stopping the compose script 
+
+=Build and Run a Mongo Docker Image=
+in order to run this project without using docker-compose, 
+you will need to build and run a docker mongo image yourself
+open docker terminal and navigate to the root project folder
+build a docker image from the existing Mongo/dockerfile:
+	docker build -t imongo ./Mongo/
+run the docker image you just built and expose a port for it:
+	docker run -p ExternalPortNumber:27017 imongo
+note that the Mongo/dockerfile does not expose/map a port. 
+it can be done in the dockerfile, but we will do this in the docker-compose file or the command line
+
+=Run Node app=
+open docker terminal and navigate to the MEAN/Node-Express project folder
+run the node application:
+	node index.js 
+the default behavior is currently using EJS, but you can pass arguments
+to specify the front end type:
+	node index.js ejs
+	node index.js ang
+
+
+so far A very simple read/write form has been wired up to a mongo database using EJS
 
 
 ====Start Developing Mongo=====
@@ -56,8 +79,7 @@ we're just going to grab the latest mongo image and map its exposed port
 
 =====Start Developing Angular====
 this facet still needs to be installed and configured! currently the app is using EJS as a template engine
-
-
+Nick is working on this
 
 
 ==========run docker image==========
